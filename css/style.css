@@ -1,0 +1,55 @@
+body{
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-content: center;
+    background-color: rgba(80, 127, 255, 0.911);
+
+}
+.toggle-btn{
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(150deg,rgba(5, 238, 226, 0.795), rgba(236, 200, 81, 0.76), rgba(228, 84, 156, 0.699));
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   
+}
+
+.toggle-btn::before{
+    content: "";
+    width: 70%;
+    height: 5%;
+    background-color: orange;
+    position: absolute;
+
+   
+    transition: all 0.4s ease;
+    border-radius: 3px;
+    box-shadow: 0 15px 0 0 #fff;
+    transform: translateY(-15px);
+}
+.toggle-btn::after{
+    content: "";
+    width: 70%;
+    height: 5%;
+    background-color: rgba(0, 128, 0, 0.651);
+    position: absolute;
+
+    transition: all 0.4s ease;
+    border-radius: 3px;
+    transform: translateY(15px);
+}
+.toggle-btn.active::before{
+    box-shadow: none;
+    transform: translateY(0px) rotate(45deg);
+
+}
+.toggle-btn.active::after{
+    transform: translateY(0px) rotate(-45deg);
+
+}
